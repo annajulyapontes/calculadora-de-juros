@@ -25,24 +25,18 @@ Para rodar o projeto localmente, siga os passos abaixo:
 
 1. **Clone o Repositório**
    - Execute o comando:
-     ```bash
-     git clone https://github.com/seu-usuario/calculadora-de-juros.git
+     git clone https://github.com/annajulyapontes/calculadora-de-juros.git
      cd calculadora-de-juros
-     ```
 
 2. **Execute os Arquivos**
    - Para calcular **Juros Simples**, execute:
-     ```bash
      python js.py
-     ```
+     
    - Para calcular **Juros Compostos**, execute:
-     ```bash
      python jc.py
-     ```
+     
    - Para realizar a **Simulação de Financiamento**, execute:
-     ```bash
      python sf.py
-     ```
 
 3. **Insira os valores solicitados**
    - Para cada arquivo, insira os valores no terminal conforme solicitado. O resultado será exibido na tela.
@@ -68,24 +62,20 @@ Se você deseja contribuir para o projeto, siga os passos abaixo:
 
 2. **Crie uma Nova Branch**
    - No terminal, crie uma branch para suas alterações:
-     ```bash
      git checkout -b minha-funcionalidade
-     ```
+     
 
 3. **Faça as Alterações**
    - Realize as alterações desejadas no código ou na documentação.
 
 4. **Faça o Commit**
    - Salve suas alterações com um commit descritivo:
-     ```bash
      git commit -m "Adiciona nova funcionalidade"
-     ```
+     
 
 5. **Envie para o Repositório**
    - Envie as alterações para a branch que você criou:
-     ```bash
      git push origin minha-funcionalidade
-     ```
 
 6. **Abra um Pull Request**
    - No GitHub, abra um Pull Request para que suas alterações sejam revisadas e incorporadas.
