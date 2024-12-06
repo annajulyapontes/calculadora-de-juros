@@ -1,19 +1,26 @@
-# -*- coding: utf-8 -*-
-
-def calcular_juros_compostos(principal, taxa, tempo):
+def calcular_juros_compostos(capital, taxa, tempo):
     """
     Calcula o montante com juros compostos.
-    :param principal: Valor principal (float)
-    :param taxa: Taxa de juros em decimal (float)
-    :param tempo: Tempo em anos (float)
-    :return: Montante total (float)
+
+    Args:
+        capital (float): O capital inicial.
+        taxa (float): A taxa de juros em porcentagem.
+        tempo (float): O tempo em meses ou anos.
+
+    Returns:
+        float: O montante com juros compostos.
     """
-    return principal * (1 + taxa)**tempo
+    montante = capital * (1 + (taxa / 100)) ** tempo
+    return montante
 
 if __name__ == "__main__":
-    principal = float(input("Digite o valor principal: "))
-    taxa = float(input("Digite a taxa de juros (em decimal): "))
-    tempo = float(input("Digite o tempo (em anos): "))
+    print("Calculadora de Juros Compostos")
+    capital = float(input("Digite o capital inicial: "))
+    taxa = float(input("Digite a taxa de juros (%): "))
+    tempo = float(input("Digite o tempo (meses ou anos): "))
 
-    montante = calcular_juros_compostos(principal, taxa, tempo)
-    print(f"O montante com juros compostos é: R$ {montante:.2f}")
+    montante = calcular_juros_compostos(capital, taxa, tempo)
+    juros = montante - capital
+
+    print(f"Juros Compostos: R${juros:.2f}")
+    print(f"Montante Final: R${montante:.2f}")

@@ -1,20 +1,28 @@
-# -*- coding: utf-8 -*-
+def calcular_prestacao(valor_financiado, taxa_juros, tempo):
+    """
+    Calcula o valor das prestações em um financiamento.
 
-def calcular_parcela(valor, taxa, meses):
+    Args:
+        valor_financiado (float): O valor total financiado.
+        taxa_juros (float): A taxa de juros mensal em porcentagem.
+        tempo (int): O prazo de pagamento em meses.
+
+    Returns:
+        float: O valor da prestação mensal.
     """
-    Calcula o valor da parcela em um financiamento.
-    :param valor: Valor total do financiamento (float)
-    :param taxa: Taxa de juros mensal em decimal (float)
-    :param meses: Número de parcelas (int)
-    :return: Valor da parcela (float)
-    """
-    fator = (1 + taxa)**meses
-    return valor * (taxa * fator) / (fator - 1)
+    taxa_mensal = taxa_juros / 100
+    prestacao = (valor_financiado * taxa_mensal) / (1 - (1 + taxa_mensal) ** -tempo)
+    return prestacao
 
 if __name__ == "__main__":
-    valor = float(input("Digite o valor do financiamento: "))
-    taxa = float(input("Digite a taxa de juros mensal (em decimal): "))
-    meses = int(input("Digite o número de parcelas: "))
+    print("Simulação de Financiamento")
+    valor_financiado = float(input("Digite o valor financiado: "))
+    taxa_juros = float(input("Digite a taxa de juros mensal (%): "))
+    tempo = int(input("Digite o prazo de pagamento (meses): "))
 
-    parcela = calcular_parcela(valor, taxa, meses)
-    print(f"O valor da parcela é: R$ {parcela:.2f}")
+    prestacao = calcular_prestacao(valor_financiado, taxa_juros, tempo)
+    valor_total = prestacao * tempo
+
+    print(f"Valor da Prestação: R${prestacao:.2f}")
+    print(f"Valor Total Pago: R${valor_total:.2f}")
+    print(f"Juros Totais: R${valor_total - valor_financiado:.2f}")
